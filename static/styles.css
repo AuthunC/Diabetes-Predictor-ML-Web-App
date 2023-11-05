@@ -1,0 +1,261 @@
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Define fonts */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.heading_font {
+    /* font-family: 'Pacifico', cursive; */
+	font-family: 'fantasy', cursive;
+}
+
+/* Container styles */
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: #3c6382;
+    color: #fff;
+    transition: background-color 0.5s;
+}
+
+.container:hover {
+    background-color: #34495e;
+}
+
+.container-heading {
+    font-size: 2.5rem;
+    transition: font-size 0.3s;
+}
+
+.container-heading:hover {
+    font-size: 2.8rem;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Form and Input styles */
+.ml-container {
+    max-width: 585px;
+	height: 540px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+}
+.ml-container1 {
+    max-width: 800px;
+	height: auto;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+}
+ul{
+	list-style-type:circle;
+}
+ul li{
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+	padding: 10px;
+	opacity: 0.9;
+	text-align: left;
+}
+h1{
+	text-align: center;
+}
+.ml-container:hover, .ml-container1:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+form .input-container{
+    text-align: left;
+	margin-left: 70px;
+}
+
+/* Style for the input container */
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Style for the input field */
+.form-input {
+    width: 80%;
+    padding: 10px;
+	border: 2px solid #3c6382;
+	font-family:'Times New Roman', Times, serif;
+	border-radius: 3px;
+    font-size: 1rem;
+}
+.input-icon {
+    position: absolute;
+    left: -25px; /* Adjust the left position as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #3c6382; /* Color of the icon */
+    font-size: 19px; /* Adjust the size of the icon */
+}
+.input-wrap .tick-icon{
+	margin-left: 5px;
+	color: green;
+	font-size: 20px;
+	display: none;
+}
+/* .form-input:valid {
+    border-color: green; 
+}*/
+@keyframes shake {
+    25% {
+        transform: translateX(4px);
+    }
+    50% {
+        transform: translateX(-4px);
+    }
+    75% {
+        transform: translateX(4px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.shake {
+    animation: shake 300ms;
+}
+
+.tooltip {
+    position: absolute;
+    top: -40px; /* Adjust the distance from the icon */
+    left: -15px;
+    transform: translateX(-50%);
+    display: none;
+	z-index: 100;
+    background-color: #3c6382;
+	opacity: 0.9;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 13px;
+}
+
+/* Show tooltip on hover */
+.input-icon:hover + .tooltip {
+    display: block;
+}
+/* Style for the input label (placeholder) */
+.input-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    pointer-events: none;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+.placeholder-text {
+    font-size: 1rem;
+    display: inline-block;
+    transition: 0.3s;
+	font-family:'Times New Roman', Times, serif;
+	opacity: 0.9;
+}
+
+.form-input:focus {
+    border-color: #3c6382; /* Change border color on focus */
+    outline: none; /* Remove the default blue outline */
+}
+
+.form-input:focus + .input-label .placeholder-text {
+    font-size: 0.8rem;
+    transform: translateY(-190%);
+    color: #3c6382;
+}
+/* .form-input:valid + .input-label .placeholder-text{
+	transform: translateY(-190%);
+}  */
+.my-cta-button {
+    background-color: #3c6382;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+.my-cta-button:hover {
+    background-color: #34495e;
+}
+
+/* Footer styles */
+.footer {
+    text-align: center;
+    background-color: #3c6382;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.contact {
+    font-size: 1.5rem;
+}
+
+.contact-icon {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+}
+@media (max-width: 768px) {
+    .container-heading {
+        font-size: 2rem;
+    }
+    .description {
+        font-size: 1rem;
+    }
+    .form-input {
+        font-size: 1rem;
+    }
+    .my-cta-button {
+        font-size: 1rem;
+    }
+    .contact {
+        font-size: 1.2rem;
+    }
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 768px) {
+    .ml-container {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-heading {
+        font-size: 1.5rem;
+    }
+    .description {
+        font-size: 1rem;
+    }
+    .form-input {
+        font-size: 1rem;
+    }
+    .my-cta-button {
+        font-size: 1rem;
+    }
+}
+

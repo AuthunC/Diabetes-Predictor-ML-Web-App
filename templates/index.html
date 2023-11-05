@@ -1,0 +1,216 @@
+<!-- <!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Diabetes Predictor</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Diabetes Predictor</span></h2>
+            <div class='description'>
+    			<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+    		</div>
+    	</div>
+
+
+    	<div class="ml-container">
+    		<form action="{{ url_for('predict') }}" method="POST">
+                <input class="form-input" type="text" name="pregnancies" placeholder="Number of Pregnancies eg. 0"><br>
+                <input class="form-input" type="text" name="glucose" placeholder="Glucose (mg/dL) eg. 80"><br>
+                <input class="form-input" type="text" name="bloodpressure" placeholder="Blood Pressure (mmHg) eg. 80"><br>
+                <input class="form-input" type="text" name="skinthickness" placeholder="Skin Thickness (mm) eg. 20"><br>
+                <input class="form-input" type="text" name="insulin" placeholder="Insulin Level (IU/mL) eg. 80"><br>
+                <input class="form-input" type="text" name="bmi" placeholder="Body Mass Index (kg/m²) eg. 23.1"><br>
+                <input class="form-input" type="text" name="dpf" placeholder="Diabetes Pedigree Function eg. 0.52"><br>
+                <input class="form-input" type="text" name="age" placeholder="Age (years) eg. 34"><br>
+
+        		<input type="submit" class="my-cta-button" value="Predict">
+        	</form>
+    	</div>
+
+
+       <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/anujvyas/Diabetes-Prediction-Deployment"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/anujkvyas"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+           </div>
+           <p class='footer-description'>Made with ❤️ by Anuj Vyas.</p>
+       </div>
+
+    </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Diabetes Predictor</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Website Title -->
+        <div class="container">
+            <h2 class='container-heading'><span class="heading_font">Diabetes Predictor</span></h2>
+            <div class='description'>
+                <p>A Web Application with Machine Learning, Built with Flask.</p>
+            </div>
+        </div>
+        
+        <!-- Text Area -->
+        <div class="ml-container">
+            <form action="{{ url_for('predict') }}" method="POST">
+                <div class="input-container">
+                    <i class="fa-solid fa-circle-info input-icon"></i>
+                    <span class="tooltip">The number of pregnancies a person has had, which can be a risk factor for diabetes, as women with a history of gestational diabetes or multiple pregnancies may be more susceptible.</span>
+                    <div class="input-wrap">
+                        <input class="form-input" id="preg" type="text" name="pregnancies" required pattern="\d+(\.\d+)?" title="Enter numerical values" title="Enter numerical values">
+                        <label class="input-label">
+                            <span class="placeholder-text">Number of Pregnancies Eg. 0</span>
+                        </label>
+                        <span class="tick-icon">✓</span>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <i class="fa-solid fa-circle-info input-icon"></i>
+                    <span class="tooltip">This refers to the blood sugar levels, and high glucose levels (hyperglycemia) are a hallmark of diabetes, either due to insufficient insulin production (Type 1) or insulin resistance (Type 2).</span>
+                    <div class="input-wrap">
+                        <input class="form-input" id="glucose" type="text" name="glucose" required pattern="\d+(\.\d+)?" title="Enter numerical values">
+                        <label class="input-label">
+                            <span class="placeholder-text">Glucose (mg/dL) Eg. 80</span>
+                        </label>
+                        <span class="tick-icon">✓</span>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <i class="fa-solid fa-circle-info input-icon"></i>
+                    <span class="tooltip">Elevated blood pressure (hypertension) is often associated with diabetes, as the two conditions frequently coexist, increasing the risk of heart disease and other complications.</span>
+                    <div class="input-wrap">
+                        <input class="form-input" id="bp" type="text" name="bloodpressure" required pattern="\d+(\.\d+)?" title="Enter numerical values">
+                        <label class="input-label">
+                            <span class="placeholder-text">Blood Pressure (mmHg) Eg. 80</span>
+                        </label>
+                        <span class="tick-icon">✓</span>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <i class="fa-solid fa-circle-info input-icon"></i>
+                    <span class="tooltip">Skin thickness isn't directly related to diabetes, but increased fat or skinfold thickness can be indicative of obesity, a significant risk factor for Type 2 diabetes.</span>
+                    <div class="input-wrap">
+                        <input class="form-input" id="skin" type="text" name="skinthickness" required pattern="\d+(\.\d+)?" title="Enter numerical values">
+                        <label class="input-label">
+                            <span class="placeholder-text">Skin Thickness (mm) Eg. 20</span>
+                        </label>
+                        <span class="tick-icon">✓</span>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <i class="fa-solid fa-circle-info input-icon"></i>
+                    <span class="tooltip">Insulin is a hormone essential for regulating blood sugar levels. In diabetes, there may be a deficiency of insulin (Type 1) or impaired insulin function (Type 2).</span>
+                    <div class="input-wrap">
+                        <input class="form-input" id="skin" type="text" name="insulin" required pattern="\d+(\.\d+)?" title="Enter numerical values">
+                        <label class="input-label">
+                            <span class="placeholder-text">Insulin Level (IU/mL) Eg. 80</span>
+                        </label>
+                        <span class="tick-icon">✓</span>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <i class="fa-solid fa-circle-info input-icon"></i>
+                    <span class="tooltip">BMI measures body fat based on height and weight. A high BMI, especially in the obese range, is a significant risk factor for Type 2 diabetes, as excess body fat can lead to insulin resistance.</span>
+                    <div class="input-wrap">
+                        <input class="form-input" id="bmi" type="text" name="bmi" required pattern="\d+(\.\d+)?" title="Enter numerical values"> 
+                        <label class="input-label">
+                            <span class="placeholder-text">Body Mass Index (kg/m²) Eg. 23.1</span>
+                        </label>
+                        <span class="tick-icon">✓</span>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <i class="fa-solid fa-circle-info input-icon"></i>
+                    <span class="tooltip">This is a genetic risk assessment score that evaluates family history to predict the likelihood of developing diabetes. A higher score indicates a greater genetic risk.</span>
+                    <div class="input-wrap">
+                        <input class="form-input" id="dpf" type="text" name="dpf" required pattern="\d+(\.\d+)?" title="Enter numerical values">
+                        <label class="input-label">
+                            <span class="placeholder-text">Diabetes Pedigree Function Eg. 0.52</span>
+                        </label>
+                        <span class="tick-icon">✓</span>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <i class="fa-solid fa-circle-info input-icon"></i>
+                    <span class="tooltip"> Age is a risk factor for Type 2 diabetes, as it becomes more prevalent with increasing age. It's also a risk factor for Type 1 diabetes but is usually diagnosed in children and young adults.</span>
+                    <div class="input-wrap">
+                        <input class="form-input" id="age" type="text" name="age" required pattern="\d+(\.\d+)?" title="Enter numerical values">
+                        <label class="input-label">
+                            <span class="placeholder-text">Age (years) Eg. 34</span>
+                        </label>
+                        <span class="tick-icon">✓</span>
+                    </div>
+                </div>
+                <a href="result.html"><input type="submit" class="my-cta-button" value="Predict"></a>
+            </form>
+        </div>
+
+        <script>
+            const inputFields = document.querySelectorAll(".form-input");
+            const tickIcons = document.querySelectorAll(".tick-icon");
+
+            // Add input event listeners to all input fields
+            inputFields.forEach((input, index) => {
+                input.addEventListener("input", function () {
+                    if (input.validity.valid) {
+                        // If input is valid, show the tick icon and change the border color to green
+                        tickIcons[index].style.display = "inline-block";
+                        input.style.borderColor = "green";
+                    } else {
+                        // If input is not valid, hide the tick icon and change the border color to its default
+                        tickIcons[index].style.display = "none";
+                        input.style.borderColor = "red"; // Replace with your desired default border color
+                        input.classList.add("shake"); // Add the shake animation class
+                        setTimeout(() => {
+                            input.classList.remove("shake"); // Remove the shake class after the animation
+                        }, 300);
+                    }
+                });
+            });
+            window.addEventListener("load", function () {
+            const form = document.querySelector("form"); // Change this selector to match your specific form
+
+        // Reset the form when the page loads
+            form.reset();
+            });
+            const inputContainers = document.querySelectorAll(".input-container");
+        
+            inputContainers.forEach(container => {
+                const inputField = container.querySelector(".form-input");
+        
+                inputField.addEventListener("input", function () {
+                    const placeholderText = container.querySelector(".placeholder-text");
+                    const inputLabel = container.querySelector(".input-label");
+        
+                    if (inputField.value.length > 0) {
+                        // placeholderText.style.display = "none";
+                        placeholderText.style.transform = "translateY(-30px)";
+                        placeholderText.style.color = "#3c6382";
+                        placeholderText.style.fontSize="0.8rem";
+                    } else {
+                        placeholderText.style.display = "inline-block";
+                        inputLabel.style.color = "#888";
+                    }
+                });
+            });
+        </script>
+        
+    </body>
+</html>

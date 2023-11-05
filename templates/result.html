@@ -1,0 +1,104 @@
+<!-- <!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Diabetes Predictor</title>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	</head>
+
+    <body>
+
+		<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Diabetes Predictor</span></h2>
+            <div class='description'>
+    			<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+    		</div>
+    	</div>
+
+
+		<div class="results">
+			{% if prediction==1 %}
+				<h1>Prediction: <span class='danger'>Oops! You have DIABETES.</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='diabetes.webp') }}" alt="Diabetes Image">
+			{% elif prediction==0 %}
+				<h1>Prediction: <span class='safe'>Great! You DON'T have diabetes.</span></h1>
+				<img class="gif1" src="{{ url_for('static', filename='no-diabetes.webp') }}" alt="Not Diabetes Image">
+			{% endif %}
+		</div>
+
+
+       <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/anujvyas/Diabetes-Prediction-Deployment"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/anujkvyas"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+           </div>
+           <p class='footer-description'>Made with ❤️ by Anuj Vyas.</p>
+       </div>
+
+	</body>
+</html> -->
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Diabetes Predictor</title>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	</head>
+
+    <body>
+
+        <!-- Website Title -->
+		<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Diabetes Predictor</span></h2>
+            <div class='description'>
+    			<p>A Web Application with Machine Learning, Built with Flask.</p>
+    		</div>
+    	</div>
+
+		<!-- Result -->
+		<div class="ml-container1">
+			{% if prediction==1 %}
+				<h1><span class='danger' style="color: red;">You have Diabetes.</span></h1>
+				<ul>
+					<li>Diabetes Management is Key: Being aware of your diabetic condition is the first step towards managing it effectively. Diabetes can be well-controlled with the right approach.</li>
+					<li>Consult with Healthcare Professionals: Reach out to healthcare experts, like doctors and dietitians, to create a personalized diabetes management plan. Regular consultations are essential.</li>
+					<li>Monitor Blood Sugar Levels: Keep a close watch on your blood sugar levels and follow the prescribed testing schedule. This helps in making informed decisions about your health.</li>
+					<li>Medication and Lifestyle Modifications: Comply with your prescribed medications and make necessary lifestyle changes, such as dietary adjustments and exercise, to control diabetes.</li>
+					<li>Support and Education: Seek support from diabetes support groups and educational resources. Learning more about diabetes empowers you to effectively manage your condition and lead a fulfilling life.</li>
+				</ul>
+
+			{% elif prediction==0 %}
+				<h1><span class='safe' style="color: green;">You don't have diabetes.</span></h1>
+				<ul>
+					<li>Congratulations on a Healthy Lifestyle: Celebrate your good health and commend your commitment to a healthy lifestyle. It's a significant achievement to be free from diabetes.</li>
+					<li>Preventive Measures: To maintain your diabetes-free status, continue practicing healthy habits like regular exercise, a balanced diet, and maintaining a healthy weight. These measures help reduce the risk of developing diabetes in the future.</li>
+					<li>Regular Health Check-ups: Don't forget to schedule regular health check-ups to monitor your overall well-being. Early detection of risk factors can further safeguard your health.</li>
+					<li>Stay Informed: Stay informed about the latest research and guidelines for diabetes prevention. Knowledge is a powerful tool in maintaining your health.</li>
+					<li>Share the Knowledge: Share your success story and knowledge with friends and family, inspiring them to adopt a healthier lifestyle and reduce their own risk of diabetes.</li>
+				</ul>
+			{% endif %}
+		</div>
+
+		<div>
+			<!-- List of Points -->
+		
+
+		</div>
+		<div>
+			<p style="text-align: center;"><a href="https://www.who.int/news-room/fact-sheets/detail/diabetes#:~:text=Overview,hormone%20that%20regulates%20blood%20glucose.">Click here</a> to learn the article by World Health Organization</p>
+		</div>
+
+
+	</body>
+</html>
+
+
